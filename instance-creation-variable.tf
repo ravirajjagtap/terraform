@@ -41,5 +41,5 @@ variable "image_id"{
     default="ami-07c589821f2b353aa"
 }
 variable "ins_type" {
-    default = "t3.micro"
+    default = "t2.large"
 }
