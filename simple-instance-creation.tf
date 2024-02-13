@@ -10,7 +10,7 @@ resource "aws_instance" "my_instance" {
     key_name="tokyo-key"
     vpc_security_group_ids=["sg-0c9d82f928d058f7d"]   
 }
-resource "aws_instance" "my_instance" {
+resource "aws_instance" "my_instance-2" {
     tags ={
         Name="inst02"
         }
