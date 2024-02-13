@@ -1,9 +1,7 @@
-provider "aws"
-{
+provider "aws"{
     region="ap-northeast-1"
 }
-resource "aws_instance" "my_instance"
-{
+resource "aws_instance" "my_instance" {
     tags{Name="inst01"}
     ami="ami-0b5c74e235ed808b9"
     instance_type="t2.micro"
