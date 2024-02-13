@@ -25,9 +25,9 @@ resource "aws_security_group" "my_sg" {
     description="allow-ssh and http"
     vpc_id="vpc-0d4f640bc61acb3bb"
     ingress{
-        protocol="HTTP"
-        from_port=80
-        to_port=80
+        protocol="TCP"
+        from_port=53
+        to_port=53
         cidr_blocks=["0.0.0.0/0"]
     }
     egress{
