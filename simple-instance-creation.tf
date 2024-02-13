@@ -2,7 +2,7 @@ provider "aws"{
     region="ap-northeast-1"
 }
 resource "aws_instance" "my_instance" {
-    tags{
+    tag{
         Name="inst01"
         }
     ami="ami-0b5c74e235ed808b9"
