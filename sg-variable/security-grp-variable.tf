@@ -8,7 +8,7 @@ resource "aws_instance" "my_instance-1"{
     ami=var.ami
     instance_type="t2.micro"
     key_name="tokyo-key"
-    vpc_security_group_ids=var.vpc-sg , aws_security_group.my_sg.id
+    vpc_security_group_ids=var.vpc-sg
 }
 resource "aws_instance" "my_instance-2"{
     tags={
