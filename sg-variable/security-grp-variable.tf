@@ -3,7 +3,8 @@ provider "aws" {
 }
 resource "aws_instance" "my_instance-1"{
     tags={
-        Name ="rule-var-inst-1"    }
+        Name ="rule-var-inst-1"   
+    }
     ami="ami-07c589821f2b353aa"
     instance_type="t2.micro"
     key_name="tokyo-key"
