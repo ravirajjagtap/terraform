@@ -6,7 +6,7 @@ resource "aws_instance" "my_instance" {                       #"resource_type" "
         Name="inst01"
         }
     ami="ami-0b5c74e235ed808b9"
-    instance_type="t3.micro"
+    instance_type="t2.micro"
     key_name="tokyo-key"
     vpc_security_group_ids=["sg-0c9d82f928d058f7d"]   
 }
@@ -19,4 +19,3 @@ resource "aws_instance" "my_instance-2" {
     key_name="tokyo-key"
     vpc_security_group_ids=["sg-0c9d82f928d058f7d"]   
 }
-            
