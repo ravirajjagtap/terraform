@@ -8,7 +8,7 @@ resource "aws_instance" "ins-01-var"{
     ami=var.image_id
     instance_type=var.ins_type
     key_name="tokyo-key"
-    vpc_security_group_ids=["sg-09b565401492535fc"]
+    vpc_security_group_ids=var.sg
 }
 resource "aws_instance" "ins-02-var"{
     tags={
@@ -17,7 +17,7 @@ resource "aws_instance" "ins-02-var"{
     ami=var.image_id
     instance_type=var.ins_type
     key_name="tokyo-key"
-    vpc_security_group_ids=["sg-09b565401492535fc"]
+    vpc_security_group_ids=var.sg
 }
 resource "aws_instance" "ins-03-var"{
     tags={
@@ -26,7 +26,7 @@ resource "aws_instance" "ins-03-var"{
     ami=var.image_id
     instance_type=var.ins_type
     key_name="tokyo-key"
-    vpc_security_group_ids=["sg-09b565401492535fc"]
+    vpc_security_group_ids=var.sg
 }
 resource "aws_instance" "ins-04-var"{
     tags={
@@ -35,11 +35,14 @@ resource "aws_instance" "ins-04-var"{
     ami=var.image_id
     instance_type=var.ins_type
     key_name="tokyo-key"
-    vpc_security_group_ids=["sg-09b565401492535fc"]
+    vpc_security_group_ids=var.sg
 }
 variable "image_id"{
     default="ami-07c589821f2b353aa"
 }
 variable "ins_type" {
-    default = "t2.large"
+    default = "t2.micro"
+}
+variable "sg"{
+    default =["sg-09b565401492535fc"]
 }
