@@ -43,5 +43,5 @@ variable "ami"{
     default ="ami-07c589821f2b353aa"
 }
 variable "vpc-sg"{
-    default=["sg-09b565401492535fc" , aws_security_group.my_sg.vpc_id ]
+    default =["sg-09b565401492535fc" , aws_security_group.my_sg.vpc_id ]
 }
