@@ -1,7 +1,7 @@
 provider "aws"{
     region="ap-northeast-1"
 }
-resource "aws_instance" "my_instance" {                       #"resource_type" "resource_name (should be different)" 
+resource "aws_instance" "my_instance" {
     tags ={
         Name="inst01"
         }
