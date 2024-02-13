@@ -8,6 +8,14 @@ resource "aws_instance" "my_instance" {
     ami="ami-0b5c74e235ed808b9"
     instance_type="t3.micro"
     key_name="tokyo-key"
-    vpc_security_group_ids=["sg-0c9d82f928d058f7d"]
-    
+    vpc_security_group_ids=["sg-0c9d82f928d058f7d"]   
+}
+resource "aws_instance" "my_instance" {
+    tags ={
+        Name="inst02"
+        }
+    ami="ami-0b5c74e235ed808b9"
+    instance_type="t2.large"
+    key_name="tokyo-key"
+    vpc_security_group_ids=["sg-0c9d82f928d058f7d"]   
 }
