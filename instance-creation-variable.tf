@@ -1,6 +1,7 @@
-provider "aws" {
-    region="ap-northeast-1"
-}
+provider "aws" 
+ {
+     region="ap-northeast-1"
+ }
 resource "aws_instance" "ins-01-var"{
     tags={
         Name = "my-inst-var-1"
