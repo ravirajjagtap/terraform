@@ -21,20 +21,20 @@ resource "aws_instance" "my_instance-2"{
 }
 
 resource "aws_security_group" "my_sg"{
-    Name="sg_grp"
+    name="sg_grp"
     description="allow-ssh and http"
     vpc_id="vpc-0d4f640bc61acb3bb"
     ingress{
         protocol="TCP"
         from_port=22
         to_port=22
-        cidr_block=["0.0.0.0/0"]
+        cidr_blocks=["0.0.0.0/0"]
     }
     egress{
         protocol="-1"
         from_port=0
         to_port=0
-        cidr_block=["0.0.0.0/0"]
+        cidr_blocks=["0.0.0.0/0"]
     }
 }
 
