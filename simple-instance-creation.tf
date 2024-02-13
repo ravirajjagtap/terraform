@@ -1,7 +1,7 @@
 provider "aws"{
     region="ap-northeast-1"
 }
-resource "aws_instance" "my_instance" {
+resource "aws_instance" "my_instance" {                       #"resource_type" "resource_name (should be different)" 
     tags ={
         Name="inst01"
         }
@@ -19,3 +19,4 @@ resource "aws_instance" "my_instance-2" {
     key_name="tokyo-key"
     vpc_security_group_ids=["sg-0c9d82f928d058f7d"]   
 }
+            
