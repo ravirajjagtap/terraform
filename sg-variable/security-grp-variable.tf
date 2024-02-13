@@ -20,7 +20,7 @@ resource "aws_instance" "my_instance-2"{
     vpc_security_group_ids=["sg-09b565401492535fc"]
 }
 
-resource "aws_security_group" "my_sg"{
+resource "aws_security_group" "my_sg" {
     name="sg_grp"
     description="allow-ssh and http"
     vpc_id="vpc-0d4f640bc61acb3bb"
