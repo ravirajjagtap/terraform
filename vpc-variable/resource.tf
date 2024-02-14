@@ -5,21 +5,21 @@ resource "aws_vpc" "vpc"{
     tags = {
         Name="my-vpc"
    }    
-    cidr_block = "192.168.0.0/16"
+    cidr_block = var.vpc_cidr
 }
 resource "aws_subnet" "private-subnet" {
   tags = {
     Name = "pvt-subnet"
   }
   vpc_id = aws_vpc.vpc.id
-  cidr_block = "192.168.0.0/20"
+  cidr_block = var.pvt_cidr
 }
 resource "aws_subnet" "public-subnet" {
   tags = {
     Name = "pub-subnet"
   }
   vpc_id = aws_vpc.vpc.id
-  cidr_block = "192.168.16.0/20"
+  cidr_block = var.pub_cidr
 }
 resource "aws_internet_gateway" "igw" {
      tags = {
@@ -54,9 +54,9 @@ resource "aws_instance" "inst-1" {
     tags = {
         Name ="pvt-inst-1"
     }
-    ami = "ami-07c589821f2b353aa"
-    instance_type = "t2.micro"
-    key_name = "tokyo-key"
+    ami = var.ami_id
+    instance_type = var.inst_type
+    key_name = var.key_pair
     vpc_security_group_ids = [aws_security_group.sg.id]
     subnet_id = aws_subnet.private-subnet.id
 }
@@ -64,9 +64,9 @@ resource "aws_instance" "inst-2" {
     tags = {
         Name ="pub-inst-1"
     }
-    ami = "ami-07c589821f2b353aa"
-    instance_type = "t2.micro"
-    key_name = "tokyo-key"
+    ami = var.ami_id
+    instance_type = var.inst_type
+    key_name = var.key_pair
     vpc_security_group_ids = [aws_security_group.sg.id]
     subnet_id = aws_subnet.public-subnet.id
 }
