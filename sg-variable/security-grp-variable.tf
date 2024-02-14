@@ -8,7 +8,7 @@ resource "aws_instance" "my_instance-1"{
     ami=var.ami
     instance_type="t2.micro"
     key_name="tokyo-key"
-    vpc_security_group_ids=var.vpc-sg
+    vpc_security_group_ids=[var.default_sg_id, aws_security_group.my_sg.id]
 }
 resource "aws_instance" "my_instance-2"{
     tags={
@@ -17,7 +17,7 @@ resource "aws_instance" "my_instance-2"{
     ami=var.ami
     instance_type="t2.micro"
     key_name="tokyo-key"
-    vpc_security_group_ids=var.vpc-sg
+    vpc_security_group_ids=[var.default_sg_id, aws_security_group.my_sg.id]
 }
 
 resource "aws_security_group" "my_sg" {
@@ -42,6 +42,12 @@ resource "aws_security_group" "my_sg" {
 variable "ami"{
     default ="ami-07c589821f2b353aa"
 }
+/*
 variable "vpc-sg"{
     default =["sg-09b565401492535fc" , aws_security_group.my_sg.id]
+}
+*/
+
+variable "default_sg_id" {
+    default = "sg-09b565401492535fc"
 }
