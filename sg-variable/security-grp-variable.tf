@@ -9,6 +9,7 @@ resource "aws_instance" "my_instance-1"{
     instance_type="t2.micro"
     key_name="tokyo-key"
     vpc_security_group_ids=var.vpc-sg
+    vpc_id="vpc-0d4f640bc61acb3bb"
 }
 resource "aws_instance" "my_instance-2"{
     tags={
