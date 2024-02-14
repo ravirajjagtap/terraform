@@ -20,6 +20,7 @@ resource "aws_subnet" "public-subnet" {
   }
   vpc_id = aws_vpc.vpc.id
   cidr_block = var.pub_cidr
+  map_public_ip_on_launch = true
 }
 resource "aws_internet_gateway" "igw" {
      tags = {
