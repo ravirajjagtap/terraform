@@ -19,7 +19,6 @@ resource "aws_subnet" "public-subnet" {
     Name = "pub-subnet"
   }
   vpc_id = aws_vpc.vpc.id
-  map_public_ip_on_launch = true
   cidr_block = "192.168.16.0/20"
 }
 resource "aws_internet_gateway" "igw" {
