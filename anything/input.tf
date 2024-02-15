@@ -1,5 +1,5 @@
 variable "username" {
-  default = ravi
+
 }
 
 output "username" {
