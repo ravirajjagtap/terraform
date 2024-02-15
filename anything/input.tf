@@ -1,3 +1,7 @@
+variable "username" {
+  default = ravi
+}
+
 output "username" {
-  value = "hello"
+  value = "hello ${var.username}"
 }
