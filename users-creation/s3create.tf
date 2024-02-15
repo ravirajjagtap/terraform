@@ -1,7 +1,8 @@
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
 
-resource "aws_s3_bucket" "bucket-01" {
   tags = {
-    Name= "s3-bucket-01"
+    Name        = "My bucket"
+    Environment = "Dev"
   }
-  bucket = "my-bucket-1"
 }
